@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Calorie Counter</string>
+    <string name="action_settings">Settings</string>
+    <string name="goTrack">Track</string>
+    <string name="goProfile">Profile</string>
+    <string name="title_activity_track">Track</string>
+    <string name="trackSubTitle">Start tracking your calories</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="user_name">Name</string>
+    <string name="user_age">Age</string>
+    <string name="user_weight">Weight (lbs)</string>
+    <string name="user_gender">Gender</string>
+    <string name="user_height">Height (inches)</string>
+    <string name="user_activity">Activity level</string>
+    <string name="calorieIntake">Calorie intake</string>
+    <string name="submitBtn">Submit</string>
+    <string name="profileInstruction">Let get started on your profile!</string>
+    <string-array name="gender">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="activityLevel">
+        <item>Select exercise activity level</item>
+        <item>little or no exercise</item>
+        <item>light exercise</item>
+        <item>moderate exercise</item>
+        <item>heavy exercise</item>
+        <item>vigorous exercise</item>
+    </string-array>
+    <string name="title_activity_profile_results">ProfileResultsActivity</string>
+    <string name="confirm">CONFIRM</string>
+</resources>
