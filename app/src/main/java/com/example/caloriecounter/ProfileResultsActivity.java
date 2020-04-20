@@ -93,17 +93,17 @@ public class ProfileResultsActivity extends AppCompatActivity {
             doubleCalories = (66 + (6.23 * doubleWeight) + (12.7 * doubleHeight) - (6.8 * doubleAge)) * doubleActivityLevel;
             intCalories = (int) Math.round(doubleCalories);
             strCalories = Integer.toString(intCalories);
-            calories.setText("Your daily intake is " + strCalories + " calories");
+            calories.setText(strCalories + " calories");
         }
         else if(gender.equals("Female")) {
             doubleCalories = (655 + (4.35 * doubleWeight) + (4.7 * doubleHeight) - (4.7 * doubleAge)) * doubleActivityLevel;
             intCalories = (int) Math.round(doubleCalories);
             strCalories = Integer.toString(intCalories);
-            calories.setText("Your daily intake is " + strCalories + " calories");
+            calories.setText(strCalories + " calories");
         }
         else {
             strCalories = "0";
-            calories.setText("Your daily intake is " + strCalories + " calories");
+            calories.setText(strCalories + " calories");
         }
 
         FloatingActionButton fab = findViewById(R.id.fab);

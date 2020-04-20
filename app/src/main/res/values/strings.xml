@@ -30,4 +30,10 @@
     </string-array>
     <string name="title_activity_profile_results">ProfileResultsActivity</string>
     <string name="confirm">CONFIRM</string>
+    <string name="maintainWeight">Maintain weight</string>
+    <string name="loseWeight">Lose weight</string>
+    <string name="gainWeight">Gain weight</string>
+    <string name="maintainWeightSlur">To maintain the same weight, you must consume:</string>
+    <string name="loseWeightSlur">To lose weight, you must consume less than:</string>
+    <string name="gainWeightSlur">To gain weight, you must consume more than:</string>
 </resources>
