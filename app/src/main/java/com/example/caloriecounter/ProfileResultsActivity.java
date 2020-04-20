@@ -54,7 +54,7 @@ public class ProfileResultsActivity extends AppCompatActivity {
 
         double doubleCalories;
         int intCalories, maintainWeight, loseWeight, gainWeight;
-        String strCalories;
+        String strCalories, strMaintainWeight, strLoseWeight, strGainWeight;
 
         //convert user data from string to integers
         double doubleAge = Double.parseDouble(age);
@@ -94,14 +94,28 @@ public class ProfileResultsActivity extends AppCompatActivity {
         if(gender.equals("Male")) {
             doubleCalories = (66 + (6.23 * doubleWeight) + (12.7 * doubleHeight) - (6.8 * doubleAge)) * doubleActivityLevel;
             intCalories = (int) Math.round(doubleCalories);
-            strCalories = Integer.toString(intCalories);
-            calories.setText(strCalories + " calories");
+            maintainWeight = intCalories;
+            loseWeight = intCalories - 500;
+            gainWeight = intCalories + 500;
+            strMaintainWeight = Integer.toString(maintainWeight);
+            strLoseWeight = Integer.toString(loseWeight);
+            strGainWeight = Integer.toString(gainWeight);
+            calories.setText(strMaintainWeight + " calories");
+            caloriesLoseWeight.setText(strLoseWeight + " calories");
+            caloriesGainWeight.setText(strGainWeight + " calories");
         }
         else if(gender.equals("Female")) {
             doubleCalories = (655 + (4.35 * doubleWeight) + (4.7 * doubleHeight) - (4.7 * doubleAge)) * doubleActivityLevel;
             intCalories = (int) Math.round(doubleCalories);
-            strCalories = Integer.toString(intCalories);
-            calories.setText(strCalories + " calories");
+            maintainWeight = intCalories;
+            loseWeight = intCalories - 500;
+            gainWeight = intCalories + 500;
+            strMaintainWeight = Integer.toString(maintainWeight);
+            strLoseWeight = Integer.toString(loseWeight);
+            strGainWeight = Integer.toString(gainWeight);
+            calories.setText(strMaintainWeight + " calories");
+            caloriesLoseWeight.setText(strLoseWeight + " calories");
+            caloriesGainWeight.setText(strGainWeight + " calories");
         }
         else {
             strCalories = "0";
