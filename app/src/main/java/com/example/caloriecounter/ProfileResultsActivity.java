@@ -41,6 +41,8 @@ public class ProfileResultsActivity extends AppCompatActivity {
         TextView userGender = (TextView) findViewById(R.id.txtGender);
         TextView userActivityLevel = (TextView) findViewById(R.id.txtActivityLevel);
         TextView calories = (TextView) findViewById(R.id.lblDailyCalorieIntake);
+        TextView caloriesLoseWeight = (TextView) findViewById(R.id.lblLoseWeight);
+        TextView caloriesGainWeight = (TextView) findViewById(R.id.lblGainWeight);
 
         //set text from values gather from Profile
         userName.setText(name);
@@ -51,7 +53,7 @@ public class ProfileResultsActivity extends AppCompatActivity {
         userActivityLevel.setText("Activity level: " + activityLevel);
 
         double doubleCalories;
-        int intCalories;
+        int intCalories, maintainWeight, loseWeight, gainWeight;
         String strCalories;
 
         //convert user data from string to integers
