@@ -51,6 +51,7 @@ public class ProfileResultsActivity extends AppCompatActivity {
         userActivityLevel.setText("Activity level: " + activityLevel);
 
         double doubleCalories;
+        int intCalories;
         String strCalories;
 
         //convert user data from string to integers
@@ -59,15 +60,45 @@ public class ProfileResultsActivity extends AppCompatActivity {
         double doubleWeight = Double.parseDouble(weight);
 
 
+        //calculate activity level
+        double doubleActivityLevel = 0.0;
+        if(activityLevel.equals("little or no exercise")) {
+            activityLevel = "1.2";
+            doubleActivityLevel = Double.parseDouble(activityLevel);
+        }
+        else if(activityLevel.equals("light exercise")) {
+            activityLevel = "1.375";
+            doubleActivityLevel = Double.parseDouble(activityLevel);
+        }
+        else if(activityLevel.equals("moderate exercise")) {
+            activityLevel = "1.55";
+            doubleActivityLevel = Double.parseDouble(activityLevel);
+        }
+        else if(activityLevel.equals("heavy exercise")) {
+            activityLevel = "1.725";
+            doubleActivityLevel = Double.parseDouble(activityLevel);
+        }
+        else if(activityLevel.equals("vigorous exercise")) {
+            activityLevel = "1.9";
+            doubleActivityLevel = Double.parseDouble(activityLevel);
+        }
+        else {
+            activityLevel = "1.2";
+            doubleActivityLevel = Double.parseDouble(activityLevel);
+        }
+
+
         //calculate calories for men and women
         if(gender.equals("Male")) {
-            doubleCalories = 66 + (6.23 * doubleWeight) + (12.7 * doubleHeight) - (6.8 * doubleAge);
-            strCalories = Double.toString(doubleCalories);
+            doubleCalories = (66 + (6.23 * doubleWeight) + (12.7 * doubleHeight) - (6.8 * doubleAge)) * doubleActivityLevel;
+            intCalories = (int) Math.round(doubleCalories);
+            strCalories = Integer.toString(intCalories);
             calories.setText("Your daily intake is " + strCalories + " calories");
         }
         else if(gender.equals("Female")) {
-            doubleCalories = 655 + (4.35 * doubleWeight) + (4.7 * doubleHeight) - (4.7 * doubleAge);
-            strCalories = Double.toString(doubleCalories);
+            doubleCalories = (655 + (4.35 * doubleWeight) + (4.7 * doubleHeight) - (4.7 * doubleAge)) * doubleActivityLevel;
+            intCalories = (int) Math.round(doubleCalories);
+            strCalories = Integer.toString(intCalories);
             calories.setText("Your daily intake is " + strCalories + " calories");
         }
         else {
