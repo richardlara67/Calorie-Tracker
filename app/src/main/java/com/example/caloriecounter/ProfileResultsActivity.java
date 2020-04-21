@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class ProfileResultsActivity extends AppCompatActivity {
     String name, gender, age, weight, height, activityLevel;
-    Button btnConfirm;
+    int maintainWeight, loseWeight, gainWeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,18 +50,53 @@ public class ProfileResultsActivity extends AppCompatActivity {
         userGender.setText("Gender: " + gender);
         userActivityLevel.setText("Activity level: " + activityLevel);
 
-        double doubleCalories;
-        int intCalories;
-        String strCalories;
+        //displays calories for men and women
+        if (gender.equals("Male")) {
+            //calls function to calculate calories for males
+            calculateCalories("Male");
 
-        //convert user data from string to integers
-        double doubleAge = Double.parseDouble(age);
-        double doubleHeight = Double.parseDouble(height);
-        double doubleWeight = Double.parseDouble(weight);
+            //display results
+            displayWeightResults();
+        }
+        else if(gender.equals("Female")) {
+            //calls function to calculate calories for males
+            calculateCalories("Female");
 
+            //display results
+            displayWeightResults();
+        }
+        else {
+            String strCalories;
+            strCalories = "0";
+            calories.setText(strCalories + " calories");
+        }
 
-        //calculate activity level
-        double doubleActivityLevel = 0.0;
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+        Button btnConfirm = (Button) findViewById(R.id.btnConfirm);
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goMain();
+            }
+        });
+    }
+
+    public void goMain() {
+        Intent intent = new Intent(ProfileResultsActivity.this, HomeActivity.class);
+        this.startActivity(intent);
+    }
+
+    private double calculateActivityLevel() {
+        double doubleActivityLevel;
+
         if(activityLevel.equals("little or no exercise")) {
             activityLevel = "1.2";
             doubleActivityLevel = Double.parseDouble(activityLevel);
@@ -87,44 +122,52 @@ public class ProfileResultsActivity extends AppCompatActivity {
             doubleActivityLevel = Double.parseDouble(activityLevel);
         }
 
+        return doubleActivityLevel;
+    }
 
-        //calculate calories for men and women
-        if(gender.equals("Male")) {
-            doubleCalories = (66 + (6.23 * doubleWeight) + (12.7 * doubleHeight) - (6.8 * doubleAge)) * doubleActivityLevel;
-            intCalories = (int) Math.round(doubleCalories);
-            strCalories = Integer.toString(intCalories);
-            calories.setText(strCalories + " calories");
+    private void calculateCalories(String gender) {
+        int calories;
+        double activityLevel, doubleCalories = 0.0;
+
+        activityLevel = calculateActivityLevel();
+
+        //convert user data from string to double
+        double doubleAge = Double.parseDouble(age);
+        double doubleHeight = Double.parseDouble(height);
+        double doubleWeight = Double.parseDouble(weight);
+
+        if (gender.equals("Male")) {
+            doubleCalories = (66 + (6.23 * doubleWeight) + (12.7 * doubleHeight) - (6.8 * doubleAge)) * activityLevel;
         }
         else if(gender.equals("Female")) {
-            doubleCalories = (655 + (4.35 * doubleWeight) + (4.7 * doubleHeight) - (4.7 * doubleAge)) * doubleActivityLevel;
-            intCalories = (int) Math.round(doubleCalories);
-            strCalories = Integer.toString(intCalories);
-            calories.setText(strCalories + " calories");
+            doubleCalories = (655 + (4.35 * doubleWeight) + (4.7 * doubleHeight) - (4.7 * doubleAge)) * activityLevel;
+
         }
         else {
-            strCalories = "0";
-            calories.setText(strCalories + " calories");
+            doubleCalories = 0.0;
         }
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        calories = (int) Math.round(doubleCalories);
 
-        btnConfirm = (Button) findViewById(R.id.btnConfirm);
-        btnConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goMain();
-            }
-        });
+        maintainWeight = calories;
+        loseWeight = calories - 500;
+        gainWeight = calories + 500;
     }
-    public void goMain() {
-        Intent intent = new Intent(ProfileResultsActivity.this, HomeActivity.class);
-        this.startActivity(intent);
+
+    private void displayWeightResults() {
+        String strMaintainWeight, strLoseWeight, strGainWeight;
+
+        TextView calories = (TextView) findViewById(R.id.lblDailyCalorieIntake);
+        TextView caloriesLoseWeight = (TextView) findViewById(R.id.lblLoseWeight);
+        TextView caloriesGainWeight = (TextView) findViewById(R.id.lblGainWeight);
+
+        strMaintainWeight = Integer.toString(maintainWeight);
+        strLoseWeight = Integer.toString(loseWeight);
+        strGainWeight = Integer.toString(gainWeight);
+
+        calories.setText(strMaintainWeight + " calories");
+        caloriesLoseWeight.setText(strLoseWeight + " calories");
+        caloriesGainWeight.setText(strGainWeight + " calories");
     }
+
 }

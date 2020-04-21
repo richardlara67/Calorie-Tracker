@@ -103,7 +103,7 @@
                     android:text="@string/loseWeightSlur" />
 
                 <TextView
-                    android:id="@+id/lblDailyCalorieIntake4"
+                    android:id="@+id/lblLoseWeight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/calorieIntake"
@@ -126,7 +126,7 @@
                     android:text="@string/gainWeightSlur" />
 
                 <TextView
-                    android:id="@+id/lblDailyCalorieIntake5"
+                    android:id="@+id/lblGainWeight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/calorieIntake"

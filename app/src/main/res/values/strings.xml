@@ -28,7 +28,7 @@
         <item>heavy exercise</item>
         <item>vigorous exercise</item>
     </string-array>
-    <string name="title_activity_profile_results">ProfileResultsActivity</string>
+    <string name="title_activity_profile_results">Profile</string>
     <string name="confirm">CONFIRM</string>
     <string name="maintainWeight">Maintain weight</string>
     <string name="loseWeight">Lose weight</string>
