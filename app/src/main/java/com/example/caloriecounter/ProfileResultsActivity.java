@@ -125,11 +125,11 @@ public class ProfileResultsActivity extends AppCompatActivity {
         return doubleActivityLevel;
     }
 
-    private int calculateCalories(String gender) {
-        int intCalories;
-        double doubleActivityLevel, doubleCalories = 0.0;
+    private void calculateCalories(String gender) {
+        int calories;
+        double activityLevel, doubleCalories = 0.0;
 
-        doubleActivityLevel = calculateActivityLevel();
+        activityLevel = calculateActivityLevel();
 
         //convert user data from string to double
         double doubleAge = Double.parseDouble(age);
@@ -137,23 +137,21 @@ public class ProfileResultsActivity extends AppCompatActivity {
         double doubleWeight = Double.parseDouble(weight);
 
         if (gender.equals("Male")) {
-            doubleCalories = (66 + (6.23 * doubleWeight) + (12.7 * doubleHeight) - (6.8 * doubleAge)) * doubleActivityLevel;
+            doubleCalories = (66 + (6.23 * doubleWeight) + (12.7 * doubleHeight) - (6.8 * doubleAge)) * activityLevel;
         }
         else if(gender.equals("Female")) {
-            doubleCalories = (655 + (4.35 * doubleWeight) + (4.7 * doubleHeight) - (4.7 * doubleAge)) * doubleActivityLevel;
+            doubleCalories = (655 + (4.35 * doubleWeight) + (4.7 * doubleHeight) - (4.7 * doubleAge)) * activityLevel;
 
         }
         else {
             doubleCalories = 0.0;
         }
 
-        intCalories = (int) Math.round(doubleCalories);
+        calories = (int) Math.round(doubleCalories);
 
-        maintainWeight = intCalories;
-        loseWeight = intCalories - 500;
-        gainWeight = intCalories + 500;
-
-        return intCalories;
+        maintainWeight = calories;
+        loseWeight = calories - 500;
+        gainWeight = calories + 500;
     }
 
     private void displayWeightResults() {
