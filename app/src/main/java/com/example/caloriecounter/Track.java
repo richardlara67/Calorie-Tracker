@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class Track extends AppCompatActivity {
 
@@ -20,6 +21,15 @@ public class Track extends AppCompatActivity {
         setContentView(R.layout.activity_track);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        TextView txtWeight = (TextView) findViewById(R.id.lblOutputBMR);
+
+        Intent sendResults = getIntent();
+        int weight = sendResults.getIntExtra("weight", 0);
+
+        String strWeight = Integer.toString(weight);
+
+        txtWeight.setText(strWeight);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

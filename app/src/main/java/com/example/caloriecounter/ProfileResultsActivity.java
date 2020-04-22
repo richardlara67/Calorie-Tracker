@@ -42,7 +42,7 @@ public class ProfileResultsActivity extends AppCompatActivity {
         TextView userActivityLevel = (TextView) findViewById(R.id.txtActivityLevel);
         TextView calories = (TextView) findViewById(R.id.lblDailyCalorieIntake);
 
-        //set text from values gather from Profile
+        //set text from values gathered from ExerciseLevel activity
         userName.setText(name);
         userAge.setText("Age: " + age);
         userWeight.setText("Weight: " + weight + " lbs");
@@ -87,6 +87,7 @@ public class ProfileResultsActivity extends AppCompatActivity {
                 goMain();
             }
         });
+
     }
 
     public void goMain() {

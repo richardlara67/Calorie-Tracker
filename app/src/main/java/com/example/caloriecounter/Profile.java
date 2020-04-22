@@ -23,7 +23,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     EditText userWeight;
     EditText userHeight;
     Spinner spnGender;
-    Spinner spnActivityLevel;
     Button submitBtn;
 
     @Override
@@ -33,47 +32,39 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //create variables for XML TextViews
         userName = (EditText) findViewById(R.id.txtEditName);
         userAge = (EditText) findViewById(R.id.txtEditAge);
         userWeight = (EditText) findViewById(R.id.txtEditWeight);
         userHeight = (EditText) findViewById(R.id.txtEditHeight);
         spnGender = (Spinner) findViewById(R.id.spnGender);
-        spnActivityLevel = (Spinner) findViewById(R.id.spnActivityLevel);
 
         submitBtn = (Button) findViewById(R.id.submitBtn);
         submitBtn.setOnClickListener(this);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
     public void onClick(View v) {
-        String name, gender, age, weight, height, activityLevel;
+        String name, gender, age, weight, height;
 
+        //get user input
         name = userName.getText().toString();
         age = userAge.getText().toString();
         weight = userWeight.getText().toString();
         height = userHeight.getText().toString();
         gender = spnGender.getSelectedItem().toString();
-        activityLevel = spnActivityLevel.getSelectedItem().toString();
 
-        //pass info to ProfileResults activity
-        Intent profileResults = new Intent(Profile.this, ProfileResultsActivity.class);
-        profileResults.putExtra("name", name);
-        profileResults.putExtra("age", age);
-        profileResults.putExtra("weight", weight);
-        profileResults.putExtra("height", height);
-        profileResults.putExtra("gender", gender);
-        profileResults.putExtra("activityLevel", activityLevel);
+        //pass info to ExerciseLevelActivity activity
+        Intent openExerciseLevel = new Intent(Profile.this, ExerciseLevelActivity.class);
+        openExerciseLevel.putExtra("name", name);
+        openExerciseLevel.putExtra("age", age);
+        openExerciseLevel.putExtra("weight", weight);
+        openExerciseLevel.putExtra("height", height);
+        openExerciseLevel.putExtra("gender", gender);
         displayToast(name);
-        this.startActivity(profileResults);
+        this.startActivity(openExerciseLevel);
     }
 
     public void displayToast(String profileName) {

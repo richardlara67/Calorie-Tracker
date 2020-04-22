@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Profile"
-    tools:showIn="@layout/activity_profile">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -34,56 +31,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="10dp"
-            android:text="@string/profileInstruction"
+            android:text="How often do you exercise?"
             android:textColor="@color/colorBlue" />
 
-        <EditText
-            android:id="@+id/txtEditName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/user_name"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/txtEditAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/user_age"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/txtEditWeight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/user_weight"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/txtEditHeight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/user_height"
-            android:inputType="number" />
-
         <Spinner
-            android:id="@+id/spnGender"
-            android:layout_width="match_parent"
+            android:id="@+id/spnActivityLevel"
+            android:layout_width="wrap_content"
             android:layout_height="51dp"
-            android:entries="@array/gender" />
+            android:entries="@array/activityLevel" />
 
         <Button
             android:id="@+id/submitBtn"
+            style="@style/btnPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/submitBtn"
             android:paddingBottom="10dp"
-            style="@style/btnPrimary" />
-
+            android:text="@string/submitBtn" />
     </LinearLayout>
-
 
 </RelativeLayout>
