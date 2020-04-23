@@ -28,17 +28,47 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="match_parent"
+            android:layout_width="247dp"
             android:layout_height="wrap_content"
             android:paddingBottom="10dp"
             android:text="How often do you exercise?"
             android:textColor="@color/colorBlue" />
 
-        <Spinner
-            android:id="@+id/spnActivityLevel"
-            android:layout_width="wrap_content"
-            android:layout_height="51dp"
-            android:entries="@array/activityLevel" />
+        <RadioGroup
+            android:id="@+id/exerciseLevelGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/btnExerciseLevel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/exerciseLevel1" />
+
+            <RadioButton
+                android:id="@+id/btnExerciseLevel2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/exerciseLevel2" />
+
+            <RadioButton
+                android:id="@+id/btnExerciseLevel3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/exerciseLevel3" />
+
+            <RadioButton
+                android:id="@+id/btnExerciseLevel4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/exerciseLevel4" />
+
+            <RadioButton
+                android:id="@+id/btnExerciseLevel5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/exerciseLevel5" />
+        </RadioGroup>
 
         <Button
             android:id="@+id/submitBtn"

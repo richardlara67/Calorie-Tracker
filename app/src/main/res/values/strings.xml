@@ -11,8 +11,9 @@
     <string name="user_weight">Weight (lbs)</string>
     <string name="user_gender">Gender</string>
     <string name="user_height">Height (inches)</string>
-    <string name="user_activity">Activity level</string>
+    <string name="user_activity">Exercise Level</string>
     <string name="calorieIntake">Calorie intake</string>
+    <string name="user_fitnessGoal">Fitness goal</string>
     <string name="submitBtn">Submit</string>
     <string name="profileInstruction">Let get started on your profile!</string>
     <string-array name="gender">
@@ -20,19 +21,17 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
-    <string-array name="activityLevel">
-        <item>Select exercise activity level</item>
-        <item>little or no exercise</item>
-        <item>light exercise</item>
-        <item>moderate exercise</item>
-        <item>heavy exercise</item>
-        <item>vigorous exercise</item>
-    </string-array>
+    <string name="exerciseLevel1">I rarely exercise</string>
+    <string name="exerciseLevel2">1 to 3 times per week</string>
+    <string name="exerciseLevel3">3 to 5 times per week</string>
+    <string name="exerciseLevel4">6 to 7 days per week</string>
+    <string name="exerciseLevel5">Twice per day</string>
     <string name="title_activity_profile_results">Profile</string>
     <string name="confirm">CONFIRM</string>
     <string name="maintainWeight">Maintain weight</string>
     <string name="loseWeight">Lose weight</string>
     <string name="gainWeight">Gain weight</string>
+    <string name="weightGoalDesc">Daily calorie intake to achieve goal:</string>
     <string name="maintainWeightSlur">To maintain the same weight, you must consume:</string>
     <string name="loseWeightSlur">To lose weight, you must consume less than:</string>
     <string name="gainWeightSlur">To gain weight, you must consume more than:</string>

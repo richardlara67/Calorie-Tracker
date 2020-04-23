@@ -11,12 +11,14 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class ExerciseLevelActivity extends AppCompatActivity implements View.OnClickListener {
     private String name, gender, age, weight, height, activityLevel;
-    private Spinner spnActivityLevel;
+    private RadioGroup exerciseLevelGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +37,9 @@ public class ExerciseLevelActivity extends AppCompatActivity implements View.OnC
         activityLevel = profileResults.getStringExtra("activityLevel");
 
         //create variables for XML TextViews
-        spnActivityLevel = (Spinner) findViewById(R.id.spnActivityLevel);
-        TextView userName = (TextView) findViewById(R.id.txtUserName);
+        exerciseLevelGroup = (RadioGroup) findViewById(R.id.exerciseLevelGroup);
 
+        TextView userName = (TextView) findViewById(R.id.txtUserName);
         userName.setText(name);
 
         Button btnSubmit = (Button) findViewById(R.id.submitBtn);
@@ -56,7 +58,12 @@ public class ExerciseLevelActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
 
-        activityLevel = spnActivityLevel.getSelectedItem().toString();
+        //Get text of selected radio button from Exercise Radio Group
+        int selectedId = exerciseLevelGroup.getCheckedRadioButtonId();
+        View radioButton = exerciseLevelGroup.findViewById(selectedId);
+        int idx = exerciseLevelGroup.indexOfChild(radioButton);
+        RadioButton selectedOption = (RadioButton) exerciseLevelGroup.getChildAt(idx);
+        activityLevel = selectedOption.getText().toString();
 
         //pass data to ProfileResults activity
         Intent openResultsProfile = new Intent(ExerciseLevelActivity.this, WeightGoalActivity.class);
