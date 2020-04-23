@@ -11,17 +11,18 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class ExerciseLevelActivity extends AppCompatActivity implements View.OnClickListener {
+public class WeightGoalActivity extends AppCompatActivity implements View.OnClickListener {
     private String name, gender, age, weight, height, activityLevel;
-    private Spinner spnActivityLevel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise_level);
+        setContentView(R.layout.activity_weight_goal);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -35,9 +36,7 @@ public class ExerciseLevelActivity extends AppCompatActivity implements View.OnC
         activityLevel = profileResults.getStringExtra("activityLevel");
 
         //create variables for XML TextViews
-        spnActivityLevel = (Spinner) findViewById(R.id.spnActivityLevel);
         TextView userName = (TextView) findViewById(R.id.txtUserName);
-
         userName.setText(name);
 
         Button btnSubmit = (Button) findViewById(R.id.submitBtn);
@@ -55,17 +54,32 @@ public class ExerciseLevelActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
+        String weightGoal = "N/A";
 
-        activityLevel = spnActivityLevel.getSelectedItem().toString();
+        //Get resources for Radio Buttons
+        RadioButton btnMaintainWeight = (RadioButton) findViewById(R.id.btnMaintainWeight);
+        RadioButton btnLoseWeight = (RadioButton) findViewById(R.id.btnLoseWeight);
+        RadioButton btnGainWeight = (RadioButton) findViewById(R.id.btnGainWeight);
+
+        if(btnMaintainWeight.isChecked()) {
+            weightGoal = btnMaintainWeight.getText().toString();
+        }
+        if(btnLoseWeight.isChecked()) {
+            weightGoal = btnLoseWeight.getText().toString();
+        }
+        if(btnGainWeight.isChecked()) {
+            weightGoal = btnGainWeight.getText().toString();
+        }
 
         //pass data to ProfileResults activity
-        Intent openResultsProfile = new Intent(ExerciseLevelActivity.this, WeightGoalActivity.class);
+        Intent openResultsProfile = new Intent(WeightGoalActivity.this, ProfileResultsActivity.class);
         openResultsProfile.putExtra("name", name);
         openResultsProfile.putExtra("age", age);
         openResultsProfile.putExtra("weight", weight);
         openResultsProfile.putExtra("height", height);
         openResultsProfile.putExtra("gender", gender);
         openResultsProfile.putExtra("activityLevel", activityLevel);
+        openResultsProfile.putExtra("weightGoal", weightGoal);
         this.startActivity(openResultsProfile);
     }
 }

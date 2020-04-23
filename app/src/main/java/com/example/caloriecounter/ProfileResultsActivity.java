@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ProfileResultsActivity extends AppCompatActivity {
-    String name, gender, age, weight, height, activityLevel;
+    String name, gender, age, weight, height, activityLevel, weightGoal;
     int maintainWeight, loseWeight, gainWeight;
 
     @Override
@@ -32,6 +32,8 @@ public class ProfileResultsActivity extends AppCompatActivity {
         height = profileResults.getStringExtra("height");
         gender = profileResults.getStringExtra("gender");
         activityLevel = profileResults.getStringExtra("activityLevel");
+        weightGoal = profileResults.getStringExtra("weightGoal");
+
 
         //create variables for XML TextViews
         TextView userName = (TextView) findViewById(R.id.txtName);
@@ -40,6 +42,7 @@ public class ProfileResultsActivity extends AppCompatActivity {
         TextView userHeight = (TextView) findViewById(R.id.txtHeight);
         TextView userGender = (TextView) findViewById(R.id.txtGender);
         TextView userActivityLevel = (TextView) findViewById(R.id.txtActivityLevel);
+        TextView userFitnessGoal = (TextView) findViewById(R.id.txtFitnessGoal);
         TextView calories = (TextView) findViewById(R.id.lblDailyCalorieIntake);
 
         //set text from values gathered from ExerciseLevel activity
@@ -49,6 +52,7 @@ public class ProfileResultsActivity extends AppCompatActivity {
         userHeight.setText("Height: " + height + " inches");
         userGender.setText("Gender: " + gender);
         userActivityLevel.setText("Activity level: " + activityLevel);
+        userFitnessGoal.setText("Fitness goal: " + weightGoal);
 
         //displays calories for men and women
         if (gender.equals("Male")) {
