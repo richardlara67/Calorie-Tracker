@@ -170,15 +170,15 @@ public class ProfileResultsActivity extends AppCompatActivity {
         strLoseWeight = Integer.toString(loseWeight);
         strGainWeight = Integer.toString(gainWeight);
 
-        if(weightGoal.equals("Maintain weight")) {
+        if(weightGoal.equals(getString(R.string.maintainWeight))) {
             weightGoalHeading.setText(weightGoal);
             dailyCalories.setText(strMaintainWeight + " calories per day");
         }
-        else if(weightGoal.equals("Lose weight")) {
+        else if(weightGoal.equals(getString(R.string.loseWeight))) {
             weightGoalHeading.setText(weightGoal);
             dailyCalories.setText(strLoseWeight + " calories per day");
         }
-        else if(weightGoal.equals("Gain weight")) {
+        else if(weightGoal.equals(getString(R.string.gainWeight))) {
             weightGoalHeading.setText(weightGoal);
             dailyCalories.setText(strGainWeight + " calories per day");
         }

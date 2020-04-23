@@ -37,7 +37,8 @@
         <RadioGroup
             android:id="@+id/exerciseLevelGroup"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingTop="10dp">
 
             <RadioButton
                 android:id="@+id/btnExerciseLevel1"
@@ -76,7 +77,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="10dp"
-            android:text="@string/submitBtn" />
+            android:text="@string/continueBtn" />
+
     </LinearLayout>
 
 </RelativeLayout>

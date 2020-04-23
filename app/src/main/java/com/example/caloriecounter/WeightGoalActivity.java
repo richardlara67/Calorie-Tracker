@@ -62,13 +62,13 @@ public class WeightGoalActivity extends AppCompatActivity implements View.OnClic
         RadioButton btnGainWeight = (RadioButton) findViewById(R.id.btnGainWeight);
 
         if(btnMaintainWeight.isChecked()) {
-            weightGoal = "Maintain weight";
+            weightGoal = getString(R.string.maintainWeight);
         }
         if(btnLoseWeight.isChecked()) {
-            weightGoal = "Lose weight";
+            weightGoal = getString(R.string.loseWeight);
         }
         if(btnGainWeight.isChecked()) {
-            weightGoal = "Gain weight";
+            weightGoal = getString(R.string.gainWeight);
         }
 
         //pass data to ProfileResults activity
