@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/ProfileActivityTitle"
+            android:id="@+id/txtUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -74,12 +74,6 @@
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:entries="@array/gender" />
-
-        <Spinner
-            android:id="@+id/spnActivityLevel"
-            android:layout_width="wrap_content"
-            android:layout_height="51dp"
-            android:entries="@array/activityLevel" />
 
         <Button
             android:id="@+id/submitBtn"

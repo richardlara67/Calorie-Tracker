@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ProfileResultsActivity extends AppCompatActivity {
-    String name, gender, age, weight, height, activityLevel;
+    String name, gender, age, weight, height, activityLevel, weightGoal;
     int maintainWeight, loseWeight, gainWeight;
 
     @Override
@@ -32,6 +32,8 @@ public class ProfileResultsActivity extends AppCompatActivity {
         height = profileResults.getStringExtra("height");
         gender = profileResults.getStringExtra("gender");
         activityLevel = profileResults.getStringExtra("activityLevel");
+        weightGoal = profileResults.getStringExtra("weightGoal");
+
 
         //create variables for XML TextViews
         TextView userName = (TextView) findViewById(R.id.txtName);
@@ -40,15 +42,17 @@ public class ProfileResultsActivity extends AppCompatActivity {
         TextView userHeight = (TextView) findViewById(R.id.txtHeight);
         TextView userGender = (TextView) findViewById(R.id.txtGender);
         TextView userActivityLevel = (TextView) findViewById(R.id.txtActivityLevel);
-        TextView calories = (TextView) findViewById(R.id.lblDailyCalorieIntake);
+        TextView userFitnessGoal = (TextView) findViewById(R.id.txtFitnessGoal);
+        TextView calories = (TextView) findViewById(R.id.lblCaloriesDay);
 
-        //set text from values gather from Profile
+        //set text from values gathered from ExerciseLevel activity
         userName.setText(name);
-        userAge.setText("Age: " + age);
-        userWeight.setText("Weight: " + weight + " lbs");
-        userHeight.setText("Height: " + height + " inches");
-        userGender.setText("Gender: " + gender);
-        userActivityLevel.setText("Activity level: " + activityLevel);
+        userAge.setText(getString(R.string.user_age) + ": " + age);
+        userWeight.setText(getString(R.string.user_weight) + ": " + weight);
+        userHeight.setText(getString(R.string.user_height) + ": " + height);
+        userGender.setText(getString(R.string.user_gender) + ": " + gender);
+        userActivityLevel.setText(getString(R.string.user_activity) + ": " + activityLevel);
+        userFitnessGoal.setText(getString(R.string.user_fitnessGoal) + ": " + weightGoal);
 
         //displays calories for men and women
         if (gender.equals("Male")) {
@@ -66,8 +70,7 @@ public class ProfileResultsActivity extends AppCompatActivity {
             displayWeightResults();
         }
         else {
-            String strCalories;
-            strCalories = "0";
+            String strCalories = "0";
             calories.setText(strCalories + " calories");
         }
 
@@ -87,6 +90,7 @@ public class ProfileResultsActivity extends AppCompatActivity {
                 goMain();
             }
         });
+
     }
 
     public void goMain() {
@@ -97,29 +101,31 @@ public class ProfileResultsActivity extends AppCompatActivity {
     private double calculateActivityLevel() {
         double doubleActivityLevel;
 
-        if(activityLevel.equals("little or no exercise")) {
-            activityLevel = "1.2";
-            doubleActivityLevel = Double.parseDouble(activityLevel);
-        }
-        else if(activityLevel.equals("light exercise")) {
-            activityLevel = "1.375";
-            doubleActivityLevel = Double.parseDouble(activityLevel);
-        }
-        else if(activityLevel.equals("moderate exercise")) {
-            activityLevel = "1.55";
-            doubleActivityLevel = Double.parseDouble(activityLevel);
-        }
-        else if(activityLevel.equals("heavy exercise")) {
-            activityLevel = "1.725";
-            doubleActivityLevel = Double.parseDouble(activityLevel);
-        }
-        else if(activityLevel.equals("vigorous exercise")) {
-            activityLevel = "1.9";
-            doubleActivityLevel = Double.parseDouble(activityLevel);
-        }
-        else {
-            activityLevel = "1.2";
-            doubleActivityLevel = Double.parseDouble(activityLevel);
+        switch (activityLevel) {
+            case "I rarely exercise":
+                activityLevel = "1.2";
+                doubleActivityLevel = 1.20;
+                break;
+            case "1 to 3 times per week":
+                activityLevel = "1.375";
+                doubleActivityLevel = Double.parseDouble(activityLevel);
+                break;
+            case "3 to 5 times per week":
+                activityLevel = "1.55";
+                doubleActivityLevel = Double.parseDouble(activityLevel);
+                break;
+            case "6 to 7 days per week":
+                activityLevel = "1.725";
+                doubleActivityLevel = Double.parseDouble(activityLevel);
+                break;
+            case "Twice per day":
+                activityLevel = "1.9";
+                doubleActivityLevel = Double.parseDouble(activityLevel);
+                break;
+            default:
+                activityLevel = "1.2";
+                doubleActivityLevel = Double.parseDouble(activityLevel);
+                break;
         }
 
         return doubleActivityLevel;
@@ -157,17 +163,25 @@ public class ProfileResultsActivity extends AppCompatActivity {
     private void displayWeightResults() {
         String strMaintainWeight, strLoseWeight, strGainWeight;
 
-        TextView calories = (TextView) findViewById(R.id.lblDailyCalorieIntake);
-        TextView caloriesLoseWeight = (TextView) findViewById(R.id.lblLoseWeight);
-        TextView caloriesGainWeight = (TextView) findViewById(R.id.lblGainWeight);
+        TextView weightGoalHeading = (TextView) findViewById(R.id.txtFitnessGoalHeading);
+        TextView dailyCalories = (TextView) findViewById(R.id.lblCaloriesDay);
 
         strMaintainWeight = Integer.toString(maintainWeight);
         strLoseWeight = Integer.toString(loseWeight);
         strGainWeight = Integer.toString(gainWeight);
 
-        calories.setText(strMaintainWeight + " calories");
-        caloriesLoseWeight.setText(strLoseWeight + " calories");
-        caloriesGainWeight.setText(strGainWeight + " calories");
+        if(weightGoal.equals(getString(R.string.maintainWeight))) {
+            weightGoalHeading.setText(weightGoal);
+            dailyCalories.setText(strMaintainWeight + " calories per day");
+        }
+        else if(weightGoal.equals(getString(R.string.loseWeight))) {
+            weightGoalHeading.setText(weightGoal);
+            dailyCalories.setText(strLoseWeight + " calories per day");
+        }
+        else if(weightGoal.equals(getString(R.string.gainWeight))) {
+            weightGoalHeading.setText(weightGoal);
+            dailyCalories.setText(strGainWeight + " calories per day");
+        }
     }
 
 }

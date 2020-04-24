@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">Calorie Counter</string>
     <string name="action_settings">Settings</string>
-    <string name="goTrack">Track</string>
-    <string name="goProfile">Profile</string>
     <string name="title_activity_track">Track</string>
     <string name="trackSubTitle">Start tracking your calories</string>
     <string name="title_activity_profile">Profile</string>
@@ -11,29 +9,46 @@
     <string name="user_weight">Weight (lbs)</string>
     <string name="user_gender">Gender</string>
     <string name="user_height">Height (inches)</string>
-    <string name="user_activity">Activity level</string>
+    <string name="user_activity">Exercise Level</string>
     <string name="calorieIntake">Calorie intake</string>
-    <string name="submitBtn">Submit</string>
+    <string name="user_fitnessGoal">Fitness goal</string>
     <string name="profileInstruction">Let get started on your profile!</string>
     <string-array name="gender">
         <item>Gender</item>
         <item>Male</item>
         <item>Female</item>
     </string-array>
-    <string-array name="activityLevel">
-        <item>Select exercise activity level</item>
-        <item>little or no exercise</item>
-        <item>light exercise</item>
-        <item>moderate exercise</item>
-        <item>heavy exercise</item>
-        <item>vigorous exercise</item>
-    </string-array>
+    <string name="exerciseLevel1">I rarely exercise</string>
+    <string name="exerciseLevel2">1 to 3 times per week</string>
+    <string name="exerciseLevel3">3 to 5 times per week</string>
+    <string name="exerciseLevel4">6 to 7 days per week</string>
+    <string name="exerciseLevel5">Twice per day</string>
     <string name="title_activity_profile_results">Profile</string>
-    <string name="confirm">CONFIRM</string>
     <string name="maintainWeight">Maintain weight</string>
-    <string name="loseWeight">Lose weight</string>
-    <string name="gainWeight">Gain weight</string>
+    <string name="loseWeight">Lose weight (1lb/week)</string>
+    <string name="gainWeight">Gain weight (1lb/week)</string>
+    <string name="weightGoalDesc">Daily calorie intake to achieve goal:</string>
     <string name="maintainWeightSlur">To maintain the same weight, you must consume:</string>
     <string name="loseWeightSlur">To lose weight, you must consume less than:</string>
     <string name="gainWeightSlur">To gain weight, you must consume more than:</string>
+    <string name="title_activity_exercise_level">Exercise Level</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_weight_goal">Weight Goal</string>
+    <string name="weightGoalQT">Which of these options best apply to you?</string>
+    <string name="weightLoseQT">I want to lose weight (1lb/week)</string>
+    <string name="weightMaintainQT">I want to maintain my weight</string>
+    <string name="weightGainQT">I want to gain weight (1lb/week)</string>
+    <!-- Buttons -->
+    <string name="continueBtn">Continue</string>
+    <string name="submitBtn">Submit</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="goTrack">Track</string>
+    <string name="goProfile">Profile</string>
 </resources>
