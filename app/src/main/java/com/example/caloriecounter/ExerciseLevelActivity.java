@@ -15,6 +15,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ExerciseLevelActivity extends AppCompatActivity implements View.OnClickListener {
     private String name, gender, age, weight, height, activityLevel;
@@ -57,22 +58,27 @@ public class ExerciseLevelActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
+        if(exerciseLevelGroup.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "Please select an option", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            //Get text of selected radio button from Exercise Radio Group
+            int selectedId = exerciseLevelGroup.getCheckedRadioButtonId();
+            View radioButton = exerciseLevelGroup.findViewById(selectedId);
+            int idx = exerciseLevelGroup.indexOfChild(radioButton);
+            RadioButton selectedOption = (RadioButton) exerciseLevelGroup.getChildAt(idx);
+            activityLevel = selectedOption.getText().toString();
 
-        //Get text of selected radio button from Exercise Radio Group
-        int selectedId = exerciseLevelGroup.getCheckedRadioButtonId();
-        View radioButton = exerciseLevelGroup.findViewById(selectedId);
-        int idx = exerciseLevelGroup.indexOfChild(radioButton);
-        RadioButton selectedOption = (RadioButton) exerciseLevelGroup.getChildAt(idx);
-        activityLevel = selectedOption.getText().toString();
+            //pass data to ProfileResults activity
+            Intent openResultsProfile = new Intent(ExerciseLevelActivity.this, WeightGoalActivity.class);
+            openResultsProfile.putExtra("name", name);
+            openResultsProfile.putExtra("age", age);
+            openResultsProfile.putExtra("weight", weight);
+            openResultsProfile.putExtra("height", height);
+            openResultsProfile.putExtra("gender", gender);
+            openResultsProfile.putExtra("activityLevel", activityLevel);
+            this.startActivity(openResultsProfile);
+        }
 
-        //pass data to ProfileResults activity
-        Intent openResultsProfile = new Intent(ExerciseLevelActivity.this, WeightGoalActivity.class);
-        openResultsProfile.putExtra("name", name);
-        openResultsProfile.putExtra("age", age);
-        openResultsProfile.putExtra("weight", weight);
-        openResultsProfile.putExtra("height", height);
-        openResultsProfile.putExtra("gender", gender);
-        openResultsProfile.putExtra("activityLevel", activityLevel);
-        this.startActivity(openResultsProfile);
     }
 }

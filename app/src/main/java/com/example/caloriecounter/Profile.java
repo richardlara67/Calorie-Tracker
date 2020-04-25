@@ -51,24 +51,30 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
 
         //get user input
         name = userName.getText().toString();
-        age = userAge.getText().toString();
-        weight = userWeight.getText().toString();
-        height = userHeight.getText().toString();
+        age = userAge.getText().toString().trim();
+        weight = userWeight.getText().toString().trim();
+        height = userHeight.getText().toString().trim();
         gender = spnGender.getSelectedItem().toString();
 
-        //pass info to ExerciseLevelActivity activity
-        Intent openExerciseLevel = new Intent(Profile.this, ExerciseLevelActivity.class);
-        openExerciseLevel.putExtra("name", name);
-        openExerciseLevel.putExtra("age", age);
-        openExerciseLevel.putExtra("weight", weight);
-        openExerciseLevel.putExtra("height", height);
-        openExerciseLevel.putExtra("gender", gender);
-        displayToast(name);
-        this.startActivity(openExerciseLevel);
+        //validate user input is filled out
+        if(!name.isEmpty() && !age.isEmpty() && !weight.isEmpty() && !height.isEmpty() && !gender.equals("Gender")) {
+            //pass info to ExerciseLevelActivity activity
+            Intent openExerciseLevel = new Intent(Profile.this, ExerciseLevelActivity.class);
+            openExerciseLevel.putExtra("name", name);
+            openExerciseLevel.putExtra("age", age);
+            openExerciseLevel.putExtra("weight", weight);
+            openExerciseLevel.putExtra("height", height);
+            openExerciseLevel.putExtra("gender", gender);
+            displayToast(name);
+            this.startActivity(openExerciseLevel);
+        }
+        else {
+            Toast.makeText(this, "Fields cannot be empty!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void displayToast(String profileName) {
-        Toast.makeText(this, "Welcome " + profileName + "!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Welcome " + profileName + "!", Toast.LENGTH_SHORT).show();
     }
 
     @Override
