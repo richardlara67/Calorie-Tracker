@@ -40,8 +40,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         spnGender = (Spinner) findViewById(R.id.spnGender);
 
         submitBtn = (Button) findViewById(R.id.submitBtn);
-
-
         submitBtn.setOnClickListener(this);
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -76,7 +74,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void displayToast(String profileName) {
-        Toast.makeText(this, "Welcome " + profileName + "!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Welcome " + profileName + "!", Toast.LENGTH_SHORT).show();
     }
 
     @Override
