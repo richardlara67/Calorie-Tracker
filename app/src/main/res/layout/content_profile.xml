@@ -79,11 +79,11 @@
 
         <Button
             android:id="@+id/submitBtn"
+            style="@style/btnPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/submitBtn"
             android:paddingBottom="10dp"
-            style="@style/btnPrimary" />
+            android:text="@string/submitBtn" />
 
     </LinearLayout>
 
