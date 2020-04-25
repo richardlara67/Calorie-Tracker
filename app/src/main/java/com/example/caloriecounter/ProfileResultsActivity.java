@@ -83,19 +83,19 @@ public class ProfileResultsActivity extends AppCompatActivity {
             }
         });
 
-        Button btnConfirm = (Button) findViewById(R.id.btnConfirm);
+        Button btnConfirm = (Button) findViewById(R.id.btnStartOver);
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goMain();
+                goProfile();
             }
         });
 
     }
 
-    public void goMain() {
-        Intent intent = new Intent(ProfileResultsActivity.this, HomeActivity.class);
-        this.startActivity(intent);
+    public void goProfile() {
+        Intent startOver = new Intent(ProfileResultsActivity.this, Profile.class);
+        this.startActivity(startOver);
     }
 
     private double calculateActivityLevel() {

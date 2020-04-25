@@ -48,6 +48,7 @@
     <!-- Buttons -->
     <string name="continueBtn">Continue</string>
     <string name="submitBtn">Submit</string>
+    <string name="startOverBtn">Start over</string>
     <string name="confirm">CONFIRM</string>
     <string name="goTrack">Track</string>
     <string name="goProfile">Profile</string>

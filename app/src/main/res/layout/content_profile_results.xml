@@ -101,13 +101,13 @@
                     android:textSize="16sp" />
 
                 <Button
-                    android:id="@+id/btnConfirm"
+                    android:id="@+id/btnStartOver"
                     style="@style/btnPrimary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"
                     android:paddingBottom="10dp"
-                    android:text="@string/confirm" />
+                    android:text="@string/startOverBtn" />
 
             </LinearLayout>
     </ScrollView>
