@@ -7,6 +7,11 @@ Calorie Tracker is an app that calculates a user's BMR and determines a user's d
 *  :octocat: [@richardlara67](https://github.com/richardlara67)
 *  :e-mail: [richardlara67@gmail.com](mailto:richardlara67@gmail.com)
 
+##  :pencil: To-do
+- [x] Calculate BRM
+- [ ] **Create calorie tracking feature**
+- [ ] **Track macronutrients**
+- [ ] **Pull data from** [MyPyramid Food Raw Data](https://catalog.data.gov/dataset/mypyramid-food-raw-data)
 
 ##  :raised_hands: Contributing
 Contributions, issues, and feature requests are welcome!
