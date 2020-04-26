@@ -1,4 +1,4 @@
-# Calorie Tracker
+# :green_apple: Calorie Tracker
 
 Calorie Tracker is an app that calculates a user's BMR and determines a user's daily calorie intake based on a user's physical characteristics. Calorie Tracker also displays daily calorie intake depending on the user's fitness goal: maintain the same weight, lose weight, or gain weight.
 
