@@ -8,108 +8,111 @@
     tools:context=".ProfileResultsActivity"
     tools:showIn="@layout/activity_profile_results">
 
-    <ScrollView
+
+    <LinearLayout
+        android:id="@+id/linear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtName"
+            style="@style/activityTitle"
+            android:layout_width="259dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/user_name" />
 
-                <TextView
-                    android:id="@+id/txtName"
-                    style="@style/activityTitle"
-                    android:layout_width="259dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:text="@string/user_name" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="276dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="Here's what we got so far:"
+            android:textColor="@color/colorBlue" />
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="276dp"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="10dp"
-                    android:text="Here's what we got so far:"
-                    android:textColor="@color/colorBlue" />
+        <TextView
+            android:id="@+id/txtAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="@string/user_age" />
 
-                <TextView
-                    android:id="@+id/txtAge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:text="@string/user_age" />
+        <TextView
+            android:id="@+id/txtWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="@string/user_weight" />
 
-                <TextView
-                    android:id="@+id/txtWeight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:text="@string/user_weight" />
+        <TextView
+            android:id="@+id/txtHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/user_height" />
 
-                <TextView
-                    android:id="@+id/txtHeight"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/user_height" />
+        <TextView
+            android:id="@+id/txtGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="@string/user_gender" />
 
-                <TextView
-                    android:id="@+id/txtGender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:text="@string/user_gender" />
+        <TextView
+            android:id="@+id/txtActivityLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/user_activity" />
 
-                <TextView
-                    android:id="@+id/txtActivityLevel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/user_activity" />
+        <TextView
+            android:id="@+id/txtFitnessGoal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fitness goal" />
 
-                <TextView
-                    android:id="@+id/txtFitnessGoal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Fitness goal" />
+        <TextView
+            android:id="@+id/txtFitnessGoalHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/maintainWeight"
+            android:textColor="@color/colorBlue"
+            android:textSize="19sp" />
 
-                <TextView
-                    android:id="@+id/txtFitnessGoalHeading"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:textSize="19sp"
-                    android:textColor="@color/colorBlue"
-                    android:text="@string/maintainWeight" />
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/weightGoalDesc" />
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weightGoalDesc" />
 
-                <TextView
-                    android:id="@+id/lblCaloriesDay"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/calorieIntake"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
+        <TextView
+            android:id="@+id/lblCaloriesDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calorieIntake"
+            android:textColor="#000"
+            android:textSize="16sp" />
 
-                <Button
-                    android:id="@+id/btnStartOver"
-                    style="@style/btnPrimary"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="25dp"
-                    android:paddingBottom="10dp"
-                    android:text="@string/startOverBtn" />
+    </LinearLayout>
 
-            </LinearLayout>
-    </ScrollView>
+    <Button
+        android:id="@+id/btnStartOver"
+        style="@style/btnPrimary"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/linear"
+        android:layout_alignLeft="@+id/linear"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginBottom="25dp"
+        android:paddingBottom="10dp"
+        android:text="@string/startOverBtn" />
 
 </RelativeLayout>

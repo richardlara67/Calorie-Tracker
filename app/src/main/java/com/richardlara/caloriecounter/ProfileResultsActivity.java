@@ -1,4 +1,4 @@
-package com.example.caloriecounter;
+package com.RichardLara.caloriecounter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -73,15 +73,6 @@ public class ProfileResultsActivity extends AppCompatActivity {
             String strCalories = "0";
             calories.setText(strCalories + " calories");
         }
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         Button btnConfirm = (Button) findViewById(R.id.btnStartOver);
         btnConfirm.setOnClickListener(new View.OnClickListener() {

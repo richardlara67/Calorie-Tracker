@@ -1,4 +1,4 @@
-package com.example.caloriecounter;
+package com.RichardLara.caloriecounter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -46,14 +46,6 @@ public class ExerciseLevelActivity extends AppCompatActivity implements View.OnC
         Button btnSubmit = (Button) findViewById(R.id.submitBtn);
         btnSubmit.setOnClickListener(this);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override

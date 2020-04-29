@@ -1,4 +1,4 @@
-package com.example.caloriecounter;
+package com.RichardLara.caloriecounter;
 
 import android.content.Intent;
 import android.os.Bundle;
