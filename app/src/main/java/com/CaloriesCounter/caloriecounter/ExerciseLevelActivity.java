@@ -1,4 +1,4 @@
-package com.RichardLara.caloriecounter;
+package com.CaloriesCounter.caloriecounter;
 
 import android.content.Intent;
 import android.os.Bundle;

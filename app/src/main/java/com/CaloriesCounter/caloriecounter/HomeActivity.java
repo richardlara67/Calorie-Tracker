@@ -1,4 +1,4 @@
-package com.RichardLara.caloriecounter;
+package com.CaloriesCounter.caloriecounter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,27 +9,21 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.MenuItem;
 import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class Track extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_track);
+        setContentView(R.layout.activity_home);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        TextView txtWeight = (TextView) findViewById(R.id.lblOutputBMR);
-
-        Intent sendResults = getIntent();
-        int weight = sendResults.getIntExtra("weight", 0);
-
-        String strWeight = Integer.toString(weight);
-
-        txtWeight.setText(strWeight);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +33,39 @@ public class Track extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Button btnTrack = (Button) findViewById(R.id.btnTrack);
+        btnTrack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goTrack();
+            }
+        });
+
+        Button btnProfile = (Button) findViewById(R.id.btnProfile);
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goProfile();
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    public void goTrack() {
+        Intent intent = new Intent(HomeActivity.this, Track.class);
+        this.startActivity(intent);
+    }
+
+    public void goProfile() {
+        Intent intent = new Intent(HomeActivity.this, Profile.class);
+        this.startActivity(intent);
     }
 
     @Override
@@ -56,5 +83,4 @@ public class Track extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }
