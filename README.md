@@ -5,7 +5,7 @@ Calorie Tracker is an app that calculates a user's BMR and determines a user's d
 ## Author
 ####  :bust_in_silhouette: Richard Lara
 *  :octocat: [@CaloriesCounter67](https://github.com/CaloriesCounter67)
-*  :e-mail: [CaloriesCounter67@gmail.com](mailto:CaloriesCounter67@gmail.com)
+*  :e-mail: [richardlara67@gmail.com](mailto:richardlara67@gmail.com)
 
 ##  :pencil: To-do
 - [x] Calculate BRM
